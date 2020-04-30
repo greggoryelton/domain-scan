@@ -561,8 +561,8 @@ def domain_doesnt_support_https(domain, cache_dir="./cache"):
 # Check whether we have HTTP behavior data cached for a domain.
 # If so, check if we know it canonically prepends 'www'.
 def domain_uses_www(domain, cache_dir="./cache"):
-    # Don't prepend www to www.
-    if domain.startswith("www."):
+    # Don't prepend www to domains with www/www#
+    if domain.startswith("www"):
         return False
 
     # Make sure we have the data.
